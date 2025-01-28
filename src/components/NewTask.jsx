@@ -4,12 +4,12 @@ import { TaskContext } from '../App'
 function NewTask() {
     const { task, setTask } = useContext(TaskContext);
     function handleKeyEnter(e){
-        console.log(e.key);
+        e.key=="Enter" && (handleTaskAdding());
     }
 
     function handleTaskAdding(){
-        const newTask=document.querySelector('.newTaskInput').value;
-        setTask((f => [...f, newTask]));
+        const newTask=document.querySelector('.newTaskInput');
+        setTask((f => [...f, newTask.value]));
         return task;
     }
     return (
