@@ -7,7 +7,7 @@ export const TaskContext = createContext();
 
 function App() {
   const [task, setTask] = useState([]);
-  console.log(task);
+  //console.log(task);
   return (
     <>
       <h1>To do list</h1>
