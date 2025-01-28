@@ -45,19 +45,19 @@ function TasksList() {
             className='upButton'
             onClick={()=>handleOrderButtons(-1, i)}
           >
-            ^
+            ⬆️​
           </button>
           <button 
             className='downButton'
             onClick={()=>handleOrderButtons(1, i)}
           >
-            v
+            ⬇️​
           </button>
           <button 
             className='deleteButton'
             onClick={()=>handleDeleteButton(i)}
           >
-            Borrar
+            🗑️​
           </button>
         </div>
       </li>
