@@ -40,24 +40,26 @@ function TasksList() {
         onDrop={(e)=>handleDrop(i)}
       >
         <p>{t}</p>
-        <button
-          className='upButton'
-          onClick={()=>handleOrderButtons(-1, i)}
-        >
-          ^
-        </button>
-        <button 
-          className='downButton'
-          onClick={()=>handleOrderButtons(1, i)}
-        >
-          v
-        </button>
-        <button 
-          className='deleteButton'
-          onClick={()=>handleDeleteButton(i)}
-        >
-          Borrar
-        </button>
+        <div>
+          <button
+            className='upButton'
+            onClick={()=>handleOrderButtons(-1, i)}
+          >
+            ^
+          </button>
+          <button 
+            className='downButton'
+            onClick={()=>handleOrderButtons(1, i)}
+          >
+            v
+          </button>
+          <button 
+            className='deleteButton'
+            onClick={()=>handleDeleteButton(i)}
+          >
+            Borrar
+          </button>
+        </div>
       </li>
   )
 

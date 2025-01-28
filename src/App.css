@@ -1,0 +1,40 @@
+body{
+    max-width: 60vw;
+    margin: auto;
+
+}
+.inputDiv{
+    display: flex;
+    justify-content: space-between;
+}
+input{
+    width: 80%;
+}
+ul{
+    padding:0.1rem;
+}
+li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #505055;
+    margin:0.2rem;
+}
+li:hover{
+    cursor:grab;
+}
+li > *{
+    margin: 0.1rem 0.5rem;
+    padding:0.2rem 0.5rem;
+    border-radius: 10px;
+}
+li div{
+    display: flex;
+    background-color: #acacb7;
+}
+button{
+    display: inline-block;
+}
+button:hover{
+    cursor: pointer;
+}
