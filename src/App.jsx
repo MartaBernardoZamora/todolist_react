@@ -6,7 +6,8 @@ import TasksList from './components/TasksList';
 export const TaskContext = createContext();
 
 function App() {
-  const [task, setTask] = useState();
+  const [task, setTask] = useState([]);
+  console.log(task);
   return (
     <>
       <h1>To do list</h1>

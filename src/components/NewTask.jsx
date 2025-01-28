@@ -6,7 +6,7 @@ function NewTask() {
 
     function handleTaskAdding(){
         const newTask=document.querySelector('.newTaskInput').value;
-        setTask(newTask);
+        setTask((f => [...f, newTask]));
         return task;
     }
     return (
