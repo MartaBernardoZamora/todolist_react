@@ -3,21 +3,42 @@ import { TaskContext } from '../App'
 
 function TasksList() {
   const { task, setTask } = useContext(TaskContext);
+  const [position, setPosition] =useState();
+
   function handleDeleteButton(id){
     setTask(currentTask => currentTask.filter((_, i) => i !== id));
   }
   function handleOrderButtons(num, i){
-    const updatedTasks = [...task];
-    
     const newIndex=i+num;    
-    if(newIndex<0 || newIndex>=updatedTasks.length) return;
-
-    [updatedTasks[i], updatedTasks[i+num]] = [updatedTasks[i+num], updatedTasks[i]];
-    setTask(updatedTasks);
+    if(newIndex<0 || newIndex>=task.length) return;
+    setChangePositions(i, newIndex);
+  }
+  
+  function handleDragStart(id){
+    setPosition(id)
+  }
+  function handleDragOver(e) {
+    e.preventDefault();
+  }
+  function handleDrop(i){
+    setChangePositions(i, position);
+  }
+  
+  function setChangePositions(prev, post){
+    const updatedTasks = [...task];
+    [updatedTasks[prev], updatedTasks[post]] = [updatedTasks[post], updatedTasks[prev]];
+    setTask(updatedTasks);    
   }
 
   const tasks = task.map((t, i) =>
-      <li key={i}>
+      <li 
+        key={i}
+        id={i}
+        draggable="true"
+        onDragStart={(e)=>handleDragStart(i)}
+        onDragOver={handleDragOver}
+        onDrop={(e)=>handleDrop(i)}
+      >
         <p>{t}</p>
         <button
           className='upButton'
