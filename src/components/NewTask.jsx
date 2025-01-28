@@ -13,7 +13,7 @@ function NewTask() {
         document.querySelector('.newTaskInput').value='';
     }
     return (
-        <>
+        <div className='inputDiv'>
             <input
                 placeholder='Nueva tarea'
                 type='text'
@@ -25,7 +25,7 @@ function NewTask() {
             >
                 Añadir
             </button>
-        </>
+        </div>
         
     )
 }
