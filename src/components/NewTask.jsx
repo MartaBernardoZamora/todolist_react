@@ -8,9 +8,9 @@ function NewTask() {
     }
 
     function handleTaskAdding(){
-        const newTask=document.querySelector('.newTaskInput');
-        setTask((f => [...f, newTask.value]));
-        return task;
+        const newTask=document.querySelector('.newTaskInput').value;
+        setTask((currentTasks => [...currentTasks, newTask]));
+        document.querySelector('.newTaskInput').value='';
     }
     return (
         <>
