@@ -3,6 +3,9 @@ import { TaskContext } from '../App'
 
 function NewTask() {
     const { task, setTask } = useContext(TaskContext);
+    function handleKeyEnter(e){
+        console.log(e.key);
+    }
 
     function handleTaskAdding(){
         const newTask=document.querySelector('.newTaskInput').value;
@@ -15,6 +18,7 @@ function NewTask() {
                 placeholder='Nueva tarea'
                 type='text'
                 className='newTaskInput'
+                onKeyDown={handleKeyEnter}
             />
             <button
                 onClick={handleTaskAdding}
